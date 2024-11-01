@@ -1320,8 +1320,8 @@ Antes de propriamente discorrer sobre grupos de permutações, enunciaremos algu
 \begin{proof}
     A fim de provar que $\mathcal{P}(C)$ é de fato um grupo começamos mostrando que, sendo $f, g \in \mathcal{P}(C)$, então $f \circ g \in \mathcal{P}(C)$, i.e., que a operação é fechada. Como $f$ e $g$ são bijetoras pela definição do conjunto $Bij(C)$, tem-se que
     \[f \circ g: C \rightarrow C.\]
-    Sendo $c,d \in C$, se $f \circ g(c) = f \circ f (d)$, então,
-    \[f(g(c)) = f(g(d)) \Leftrightarrow g(c) = g(d) \Leftrightarrow c = d,\]
+    Sendo $c,d \in C$, se $f \circ g(c) = f \circ g (d)$, então,
+    \[f(g(c)) = f(g(d)) \Leftrightarrow f^{-1}(f(g(c))) = f^{-1}(f(g(d))) \Leftrightarrow g(c) = g(d) \Leftrightarrow g^{-1}(g(c)) = g^{-1}(g(d)) \Leftrightarrow c = d,\]
     ou seja, $f\circ g$ é injetiva.
     Além disso, seja $c \in C$. Ora, como $f$ é sobrejetora, $\exists x \in C$ tal que $f(x) = c$. E, como $g$ é sobrejetora, $\exists y \in C$ tal que $g(y) = x$. Assim,
     \[f(g(y)) = c,\]
@@ -1355,6 +1355,10 @@ Um conjunto de grupos bastante útil no estudo de grupos finitos é dos grupos d
 \begin{proof}
     % Considere $A_0 = \{x_1, x_2, \dots, x_n\}.$
     Mostraremos inicialmente que $T$ está bem definida. Sejam $a_1, a_2 \in A$ e $a_1 = a_2$, então $T_{a_1}(x_i) = a_1 x_i = a_2 x_i = T_{a_2}(x_i), \forall x_i \in A_0$. Assim, $T_{a_1} = T_{a_2}$.
+
+    Agora, mostraremos que $T$ é um homomorfismo. Sejam $a_1, a_2 \in A$, então $T_{a_1a_2}(x_i) = (a_1a_2)x_i = a_1(a_2x_i) = T_{a_1}(T_{a_2}(x_i))$. Assim, $T_{a_1a_2} = T_{a_1}T_{a_2}$.
+
+    Por fim, mostraremos que $T$ é injetivo. Tem-se que se $a \in ker(T)$, então $T_a = Id_{A_0}$. Ora, se $T_a = Id_{A_0}$, então $ax = x, \forall x \in A_0$. Assim, $a = e$, e portanto $ker(T) = \{e\}$, o que implica que $T$ é injetivo, pelas propriedades do homomorfismo.
 \end{proof}
 
 \end{novo}
@@ -1432,7 +1436,12 @@ Dados $\alpha, \beta \in S_n$ dois ciclos disjuntos, então $\alpha \beta = \bet
 \end{proposition}
 
 \begin{proof}
-    Como $\alpha$ é diferente da identidade, tem-se que $\exists a \in \{1, 2, \dots, n\}$, tal que $\alpha(a) \not= a$...
+    Vamos provar a existência da fatoração por indução no número de elementos $n$ do conjunto $\{1,2,\ldots,n\}$ sobre o qual $S_n$ age.
+
+    Para $n=2$, a única permutação diferente da identidade é a transposição $(1 \ 2)$, que é um ciclo de comprimento 2.
+
+    
+
 \end{proof}
 
 \end{novo}
