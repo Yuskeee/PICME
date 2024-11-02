@@ -1428,7 +1428,28 @@ Dados $\alpha, \beta \in S_n$ dois ciclos disjuntos, então $\alpha \beta = \bet
 \end{proposition}
 
 \begin{proof}
-    ... 
+    Primeiramente, mostraremos a existência de um produto de ciclos disjuntos de comprimento $\geq 2$ que seja igual a $\alpha$. 
+    Seja $i$ um elemento em $\{1, 2, \ldots, n\}$ tal que $\alpha(i) \neq i$.
+    Considere $r \in \mathbb{N}$, tal que $r$ seja o menor valor que satisfaça $\alpha^{r}(i) = i$, i.e., criamos um ciclo $\sigma_1$.
+    Agora, considere o conjunto $\{1, 2, \dots, n\} \setminus \{i, \alpha(i), \alpha^2(i), \dots, \alpha^{r-1}(i)\}$. Se este conjunto não estiver vazio, escolha um elemento $j$ nele e construa o ciclo $\sigma_2$ da mesma forma. 
+    Continue este processo até que todos os elementos de $\{1, 2, \dots, n\}$ tenham sido incluídos em um ciclo. Note que cada ciclo construído terá comprimento $\geq 2$, pois $\alpha \neq \text{Id}$. Afirmamos que $\alpha = \sigma_1 \sigma_2 \dots \sigma_k$, onde $\sigma_i$ são os ciclos construídos. 
+    Isso ocorre porque, para qualquer elemento $x$ em $\{1, 2, \dots, n\}$, $\alpha(x)$ é dado pela ação do ciclo que contém $x$. Como os ciclos são disjuntos, a ordem em que eles são multiplicados não importa, pela proposição \ref{prop:permutacoes_disjuntas_comutacao}.
+    
+    Quanto à unicidade da fatoração, suponhamos
+    \[\alpha = \sigma_1 \sigma_2 \dots \sigma_k = \tau_1 \tau_2 \dots \tau_l,\]
+
+    onde $\sigma_i$ e $\tau_j$ são ciclos disjuntos de comprimento $\geq 2$. 
+    Seja $x$ um elemento em $\{1, 2, \dots, n\}$.  Sem perda de generalidade, suponha que $x$ esteja no ciclo $\sigma_1$. 
+    Como $\alpha(x) = \sigma_1(x)$, então $\tau_j(x) = \sigma_1(x)$ para algum $j$. 
+    Como $\tau_j$ é um ciclo, $\tau_j^s(x) = \sigma_1^s(x)$ para todo $s \in \mathbb{N}$. 
+    Em particular, se $r$ é o comprimento do ciclo $\sigma_1$, então $\tau_j^r(x) = \sigma_1^r(x) = i$. 
+    Portanto, o ciclo $\tau_j$ contém todos os elementos do ciclo $\sigma_1$. 
+    Como $\sigma_1$ e $\tau_j$ são disjuntos, eles devem ser iguais. 
+    Analogamente, podemos mostrar que cada ciclo $\sigma_i$ é igual a algum ciclo $\tau_j$. 
+    
+    Portanto, $k = l$ e, a menos de reordenação, $\sigma_i = \tau_i$ para todo $i$. 
+
+    Concluímos que a fatoração de $\alpha$ em ciclos disjuntos é única a menos da ordem dos fatores.
 \end{proof}
 
 \end{novo}
