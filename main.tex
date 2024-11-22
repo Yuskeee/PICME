@@ -23,6 +23,7 @@
 \usepackage{framed}
 \usepackage[dvipsnames]{xcolor}
 \usepackage{tcolorbox}
+\usepackage{enumitem}
 
 % use \hyphenation for wrong spaced words
 
@@ -1452,6 +1453,95 @@ Dados $\alpha, \beta \in S_n$ dois ciclos disjuntos, então $\alpha \beta = \bet
     Concluímos que a fatoração de $\alpha$ em ciclos disjuntos é única a menos da ordem dos fatores.
 \end{proof}
 
+\end{novo}
+
+\begin{novo}
+\begin{proposition}
+\label{prop:tres_prop_S_n_transposicoes}
+    Considere as seguintes proposições:
+    \begin{enumerate}[label=\alph*)]
+        \item Todo elemento de $S_n$ pode ser escrito como um produto de transposições.
+        \item $S_n = \gen{(1 \ 2), (1 \ 3), \dots, (1 \ n)}$.
+        \item $S_n = \gen{(1 \ 2), (2 \ 3), (3 \ 4), \dots, (n-1 \ n)}$.
+    \end{enumerate}
+\end{proposition}
+\begin{proof}
+    Para o item (a), note que o produto de transposições $(a \ b) (a \ b) = ()$ é uma maneira de escrever o elemento identidade de $S_n$, $\forall n \geq 2$.
+    Agora, para $\alpha \in S_n \setminus Id$, considere a proposição \ref{prop:fatoracao_ciclos_disjuntos}. Assim,
+    \[\alpha = \sigma_1 \sigma_2 \dots \sigma_k,\]
+    onde $\sigma_1, \sigma_2, \dots, \sigma_k$ são ciclos disjuntos de ordem maior ou igual a $2$.
+    Ora, note que, para $1 \leq i \leq k$, tem-se que, sem perda de generalidade,
+    \begin{align*}
+        \sigma_i &= (x_{i1} x_{i2} \dots x_{ij}) \\
+        &= (x_{i1} x_{ij}) (x_{i1} x_{i(j-1)}) \dots (x_{i1} x_{i2}).
+    \end{align*}
+    Assim, $\alpha$ pode ser reescrita como um produto de transposições,
+    \[\alpha = ((x_{11} x_{1j}) (x_{11} x_{1(j-1)}) \dots (x_{11} x_{12})) (x_{21} x_{2j}) \dots,\]
+    como queríamos mostrar.
+
+    Uma vez provado o item (a), é claro que $\gen{(1 \ 2), (1 \ 3), \dots, (1 \ n)} \leq S_n$, assim é suficiente para o item (b) mostrar que toda transposição $(i \ j)$ pode ser escrito como um produto dos elementos do subgrupo gerado $\gen{(1 \ 2), (1 \ 3), \dots, (1 \ n)}$. Ora,
+    \[(i \ j) = (1 \ i) (1 \ j) (1 \ i),\]
+    se $i \not= j$, como queríamos.
+
+    Para o item (c), é claro que $\gen{(1 \ 2), (2 \ 3), (3 \ 4), \dots, (n-1 \ n)} \leq S_n$, e é suficiente mostrar que toda transposição $(1 \ i) \in \gen{(1 \ 2), (2 \ 3), (3 \ 4), \dots, (n-1 \ n)}$ Considerando a prova do item (b), tem-se que para $i = 2$,
+    \[(1 \ 2) \in \gen{(1 \ 2), (2 \ 3), (3 \ 4), \dots, (n-1 \ n)}.\]
+    Por indução em $i$, $\forall i \geq 2$, e adotando-se a hipótese de que $(1 \ i) \in \gen{(1 \ 2), (2 \ 3), (3 \ 4), \dots, (n-1 \ n)}$,
+    \[(1 \ i) (i \ i+1) (1 \ i) = (1 \ i+1).\]
+    Assim, $\forall i \geq 2$,
+    \[(1 \ i) \in \gen{(1 \ 2), (2 \ 3), (3 \ 4), \dots, (n-1 \ n)},\]
+    como queríamos mostrar.
+\end{proof}
+
+\begin{proposition}
+\label{prop:S_n_paridade_unica}
+    Seja $\alpha \in S_n$, tal que $\alpha = \sigma_1 \sigma_2 \dots \sigma_k$ é uma fatoração qualquer como produto de transposições. Então a paridade de $k$ é única, isto é, ou $k$ é sempre par para qualquer fatoração de $\alpha$ em transposições, ou $k$ é sempre ímpar para qualquer fatoração de $\alpha$ em transposições.  Em outras palavras, a paridade do número de transposições numa fatoração de uma permutação $\alpha \in S_n$ é invariante. Essa paridade define a paridade (ou sinal) da permutação.
+\end{proposition}
+\begin{proof}
+    % Sejam $x_1, \dots, x_n$ $n$ incógnitas, e considere
+    % $$ \Phi = \prod_{1 \leq i < j \leq n} (x_j - x_i). $$
+    % Dada uma permutação $\sigma \in S_n$, defina uma função $f_\sigma : \{\Phi, -\Phi\} \to \{\Phi, -\Phi\}$ por
+    % $$ f_\sigma(\Phi) = \prod_{1 \leq i < j \leq n} (x_{\sigma(j)} - x_{\sigma(i)}), $$
+    % e $f_\sigma(-\Phi) = -f_\sigma(\Phi)$.
+
+    % Note que, como $\sigma$ é uma permutação, $f_\sigma(\Phi) = \Phi$ ou $f_\sigma(\Phi) = -\Phi$. Além disso, se $\sigma, \rho$ são duas permutações, então $f_\sigma f_\rho = f_{\sigma \rho}$, como é fácil verificar.
+
+    % Agora, vamos considerar o que uma transposição $\tau = (a, b)$ faz com $\Phi$. Sem perda de generalidade, seja $a < b$.
+
+    % Os fatores $(x_j - x_i)$ com nem $i$ nem $j$ igual a $a$ ou $b$ são inalterados.
+
+    % Para os pares com exatamente um índice em $\{a, b\}$, temos duas classes: aqueles em que o outro índice está entre $a$ e $b$, e aqueles em que o outro índice não está entre $a$ e $b$.
+
+    % Se o outro índice está entre $a$ e $b$, então $x_j - x_a$ é enviado para $-(x_b - x_j)$ e $x_b - x_j$ é enviado para $-(x_j - x_a)$; as duas mudanças de sinal se cancelam.
+
+    % Se o outro índice é maior que $b$, então $x_j - x_a$ e $x_j - x_b$ são trocados, sem mudanças de sinal.
+
+    % Se o outro índice é menor que $a$, então $x_a - x_i$ e $x_b - x_i$ são trocados, sem mudanças de sinal.
+
+    % Finalmente, o fator $x_b - x_a$ é enviado para $-(x_b - x_a)$.
+
+    % Em resumo, se $\tau$ é uma transposição, então $f_\tau(\Phi) = -\Phi$, $f_\tau(-\Phi) = \Phi$.
+
+    % Agora tome uma permutação arbitrária $\sigma$, e expresse-a como um produto de transposições de duas maneiras diferentes:
+    % $$ \sigma = \tau_1 \cdots \tau_r = \rho_1 \cdots \rho_s. $$
+    % Então
+    % $$ f_\sigma(\Phi) = f_{\tau_1 \cdots \tau_r}(\Phi) = f_{\tau_1} \cdots f_{\tau_r}(\Phi) = (-1)^r \Phi $$
+    % e
+    % $$ f_\sigma(\Phi) = f_{\rho_1 \cdots \rho_s}(\Phi) = f_{\rho_1} \cdots f_{\rho_s}(\Phi) = (-1)^s \Phi. $$
+    % Portanto, $(-1)^r \Phi = (-1)^s \Delta$, então $r$ e $s$ têm a mesma paridade: ambos ímpares, ou ambos pares.
+\end{proof}
+
+\begin{definition}
+\label{def:permutacao_par}
+    Seja $\alpha$ um elemento de $S_n$. $\alpha$ é dito permutação par se $\alpha$ é escrito como um produto de uma quantidade par de transposições.
+\end{definition}
+\begin{proposition}
+\label{prop:}
+    Seja $A_n = \{\alpha \in S_n \ | \ \text{$\alpha$ é permutação par}\}.$ É verdade que $A_n \leq S_n$ de índice $2$. ($A_n$ é chamado de grupo alternado ou grupo de permutações pares)
+\end{proposition}
+
+\begin{proof}
+    Considere a função $\psi: S_n \rightarrow \{1, -1\}$ tal que $\psi(\alpha) = 1$ se $\alpha$ é par e $\psi(\alpha) = -1$ se $\alpha$ é ímpar.
+\end{proof}
 \end{novo}
 
 \end{document}
