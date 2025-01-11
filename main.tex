@@ -1540,7 +1540,23 @@ Dados $\alpha, \beta \in S_n$ dois ciclos disjuntos, então $\alpha \beta = \bet
 \end{proposition}
 
 \begin{proof}
-    Considere a função $\psi: S_n \rightarrow \{1, -1\}$ tal que $\psi(\alpha) = 1$ se $\alpha$ é par e $\psi(\alpha) = -1$ se $\alpha$ é ímpar.
+    Considere a função $\psi: S_n \rightarrow \{1, -1\}$ tal que $\psi(\alpha) = 1$ se $\alpha$ é par e $\psi(\alpha) = -1$ se $\alpha$ é ímpar. É imediato que $\psi$ está bem definida. Mostraremos agora que $\psi$ é um homomorfismo. Considere $\alpha, \beta \in S_n$. Para o primeiro caso e sem perda de generalidade, considere também que $\alpha$ seja par e $\beta$ seja ímpar, então
+    \[\psi(\alpha \beta) =  -1 = \psi(\alpha) \psi(\beta).\]
+    Considere agora o caso em que ambos $\alpha$ e $\beta$ são pares (cuja demonstração é análoga ao caso em que ambos são ímpares),
+    \[\psi(\alpha \beta) = +1 = \psi(\alpha) \psi(\beta).\]
+    Isso mostra que $\psi$ é um homomorfismo.
+    Ora, como $S_n$ possui tanto elementos ímpares quanto pares, tem-se que $\psi$ é um homomorfismo sobrejetivo.
+\end{proof}
+\end{novo}
+
+\begin{novo}
+\begin{proposition}
+    Seja $H$ um subgrupo de $S_n$, então $H < A_n$ ou (exclusão mútua) o índice $(H:H \cap A_n) = 2$.
+\end{proposition}
+\begin{proof}
+    Primeiro, suponhamos $H < A_n$. É imediato que
+    \[(H:H \cap A_n) = (H:H) = 1.\]
+    Agora, suponhamos $(H:H \cap A_n) = 2$. Isso implica em existir elementos em $H$ com paridades distintas, logo, $H$ não pode ser subgrupo de $A_n$.
 \end{proof}
 \end{novo}
 
