@@ -1551,13 +1551,236 @@ Dados $\alpha, \beta \in S_n$ dois ciclos disjuntos, então $\alpha \beta = \bet
 
 \begin{novo}
 \begin{proposition}
+\label{prop:permutacoes_subgrupo_OU_indice2}
     Seja $H$ um subgrupo de $S_n$, então $H < A_n$ ou (exclusão mútua) o índice $(H:H \cap A_n) = 2$.
 \end{proposition}
 \begin{proof}
     Primeiro, suponhamos $H < A_n$. É imediato que
     \[(H:H \cap A_n) = (H:H) = 1.\]
-    Agora, suponhamos $(H:H \cap A_n) = 2$. Isso implica em existir elementos em $H$ com paridades distintas, logo, $H$ não pode ser subgrupo de $A_n$.
+    Agora, suponhamos $(H:H \cap A_n) = 2$. Nesse caso, existem duas classes laterais distintas de $H \cap A_n$. Uma dessas classes laterais é $H \cap A_n$. A outra pode ser escrita como:
+    \[\alpha (H \cap A_n),\]
+    para $\alpha \in H$.
+    Ora, caso $\alpha$ seja uma permutação par, $\alpha (H \cap A_n)$ seria equivalente a $H \cap A_n$, e entraríamos em contradição que existem duas classes laterais distintas. Assim, $\alpha$ é ímpar e $H$ não pode ser subgrupo de $A_n$.
 \end{proof}
+\end{novo}
+
+\begin{novo}
+\begin{definition}
+\label{def:tipo_de_decomposicao}
+    Considere $n \geq 2$. Se $\rho \in S_n$ e se $\rho = (a_{11} \dots a_{1r_1})\dots(a_{t1} \dots a_{tr_t})$ é sua decomposição em ciclos disjuntos com $r_1 \leq r_2 \leq \dots \leq r_t$, então 
+    \[\{r_1,\dots,r_t\}\]
+    é chamado de \textit{tipo de decomposição} de $\rho$.
+\end{definition}
+\end{novo}
+
+\begin{novo}
+\begin{lemma}
+\label{lemma:decomposicao_permutacao}
+    Considere $n \geq 2$. Para uma permutação $\rho \in S_n$, tal que $\rho = (a_{11} \dots a_{1r_1}) \dots (a_{t1} \dots a_{tr_t})$ a sua decomposição em ciclos disjuntos, tem-se as seguintes afirmações:
+    \begin{enumerate}[label=\alph*)]
+        \item Se $\sigma \in S_n$, então a permutação par $\sigma\rho\sigma^{-1}$ tem a decomposição em ciclos disjuntos
+            \[\sigma\rho\sigma^{-1} = (\sigma(a_{11})\dots\sigma(a_{1r_1}))\dots(\sigma(a_{t1})\dots\sigma(a_{tr_t})).\]
+        \item Reciprocamente, se $\rho, \rho' \in S_n$ são permutações com o mesmo tipo de decomposição, então existe $\sigma \in S_n$ tal que $\rho' = \sigma\rho\sigma^{-1}$.
+        \item Se as permutações $\rho, \rho' \in S_n$ têm o mesmo tipo de decomposição e se as permutações $\rho$ e $\rho'$ deixam pelo menos duas letras fixas, então existe $\mu \in A_n$ tal que $\rho' = \mu\rho\mu'$.
+    \end{enumerate}
+\end{lemma}
+\begin{proof}
+    \textbf{(a)} Seja $\sigma\in S_n$ e considere um dos ciclos de $\rho$, digamos,
+    \[
+    \gamma=(a_{11}\,a_{12}\,\dots\,a_{1r_1}).
+    \]
+    Seja $x=\sigma(a_{11})$. Então, temos:
+    \[
+    \sigma\rho\sigma^{-1}(x)=\sigma\Bigl(\rho\bigl(\sigma^{-1}(x)\bigr)\Bigr)=\sigma\Bigl(\rho(a_{11})\Bigr)=\sigma(a_{12}).
+    \]
+    De forma similar, para $j=1,\dots,r_1$, definindo $x_j=\sigma(a_{1j})$, obtemos
+    \[
+    \sigma\rho\sigma^{-1}(x_j)=\sigma\Bigl(\rho(a_{1j})\Bigr)=\sigma(a_{1,j+1}),
+    \]
+    com a convenção de que $a_{1,r_1+1}=a_{11}$. Assim, a ação de $\sigma\rho\sigma^{-1}$ sobre os elementos $\sigma(a_{11}),\sigma(a_{12}),\dots,\sigma(a_{1r_1})$ corresponde ao ciclo
+    \[
+    (\sigma(a_{11})\,\sigma(a_{12})\,\dots\,\sigma(a_{1r_1})).
+    \]
+    Como os ciclos da decomposição de $\rho$ são disjuntos, o mesmo argumento vale para cada um deles e, portanto,
+    \[
+    \sigma\rho\sigma^{-1} = \bigl(\sigma(a_{11})\,\sigma(a_{12})\,\dots\,\sigma(a_{1r_1})\bigr)
+    \cdots
+    \bigl(\sigma(a_{t1})\,\sigma(a_{t2})\,\dots\,\sigma(a_{tr_t})\bigr).
+    \]
+
+    \bigskip
+
+    \textbf{(b)} Suponha que as decomposições em ciclos disjuntos de $\rho$ e $\rho'$ sejam
+    \[
+    \rho = (a_{11}\,a_{12}\,\dots\,a_{1r_1})\,(a_{21}\,a_{22}\,\dots\,a_{2r_2})\,\cdots\,(a_{t1}\,a_{t2}\,\dots\,a_{tr_t})
+    \]
+    e
+    \[
+    \rho' = (b_{11}\,b_{12}\,\dots\,b_{1r_1})\,(b_{21}\,b_{22}\,\dots\,b_{2r_2})\,\cdots\,(b_{t1}\,b_{t2}\,\dots\,b_{tr_t}).
+    \]
+    Como os ciclos correspondentes possuem o mesmo comprimento, podemos definir uma bijeção $\sigma:\{1,2,\dots,n\}\to\{1,2,\dots,n\}$ da seguinte maneira:
+    \[
+    \sigma(a_{ij})=b_{ij},\quad \text{para } i=1,\dots,t \text{ e } j=1,\dots,r_i,
+    \]
+    e, se existirem pontos fixos (isto é, elementos que não aparecem em nenhuma das notações dos ciclos), definimos $\sigma$ de modo que eles se mantenham fixos. Assim, $\sigma\in S_n$.
+
+    Pela parte (a), temos
+    \[
+    \sigma\,\rho\,\sigma^{-1} = \bigl(\sigma(a_{11})\,\sigma(a_{12})\,\dots\,\sigma(a_{1r_1})\bigr)
+    \cdots
+    \bigl(\sigma(a_{t1})\,\sigma(a_{t2})\,\dots\,\sigma(a_{tr_t})\bigr).
+    \]
+    Pela definição de $\sigma$, isto é
+    \[
+    \sigma\,\rho\,\sigma^{-1} = (b_{11}\,b_{12}\,\dots\,b_{1r_1})\,(b_{21}\,b_{22}\,\dots\,b_{2r_2})\,\cdots\,(b_{t1}\,b_{t2}\,\dots\,b_{tr_t}) = \rho',
+    \]
+    o que prova o item (b).
+
+    \bigskip
+
+    \textbf{(c)} Pela parte (b), existe $\sigma\in S_n$ tal que
+    \[
+    \rho'=\sigma\,\rho\,\sigma^{-1}.
+    \]
+    Se $\sigma$ for par (isto é, $\sigma\in A_n$), basta tomar $\mu=\sigma$.
+
+    Caso contrário, suponha que $\sigma$ seja ímpar. Como tanto $\rho$ quanto $\rho'$ deixam pelo menos duas letras fixas, seja $i,j\in\{1,2,\dots,n\}$ tais que
+    \[
+    \rho(i)=i,\quad \rho(j)=j,\quad \rho'(i)=i,\quad \rho'(j)=j.
+    \]
+    Considere a transposição $\tau=(i\,j)$. Pela definição de transposição, $\tau$ é ímpar e, como $i$ e $j$ são pontos fixos de $\rho$ e de $\rho'$, temos que $\tau$ comuta com ambas as permutações. Definindo
+    \[
+    \mu=\tau\,\sigma,
+    \]
+    observamos que $\mu\in A_n$, pois o produto de duas permutações ímpares é par. De fato, 
+    \[
+    \mu\,\rho\,\mu^{-1} = \tau\,\sigma\,\rho\,\sigma^{-1}\,\tau^{-1}.
+    \]
+    Como $\tau^{-1}=\tau$ e $\tau$ comuta com $\rho'$ (já que $\rho'$ fixa $i$ e $j$), obtemos
+    \[
+    \mu\,\rho\,\mu^{-1} = \tau\,\rho'\,\tau = \rho'.
+    \]
+    Portanto, existe $\mu\in A_n$ tal que $\rho'=\mu\,\rho\,\mu^{-1}$, concluindo o item (c).
+\end{proof}
+\end{novo}
+
+\begin{novo}
+\begin{proposition}
+\label{prop:A_n_3_ciclos}
+    Para $n \geq 3$:
+    \begin{enumerate}[label=\alph*)]
+        \item Todo elemento de $A_n$ é um produto de 3-ciclos.
+        \item Sejam $a, b \in \{1,2,\dots,n\}$, com $a \not= b$, então
+        \[A_n = \gen{\{abl \ | \ l = 1,2,\dots,n; l \not= a,b \}}.\]
+    \end{enumerate}
+\end{proposition}
+\begin{proof}
+    \textbf{(a)} Seja \(\alpha\in A_n\). Pela Proposição~\ref{prop:S_n_paridade_unica}, a paridade do número de transposições numa fatoração de \(\alpha\) é invariante; portanto, por ser par, \(\alpha\) pode ser escrita como um produto de um número par de transposições:
+\[
+\alpha = \tau_1\tau_2\cdots\tau_{2k}, \quad \tau_i\text{ transposições}.
+\]
+Agrupando as transposições em pares, temos:
+\[
+\alpha = (\tau_1\tau_2)(\tau_3\tau_4)\cdots(\tau_{2k-1}\tau_{2k}).
+\]
+Mostraremos que cada produto \(\tau_{2i-1}\tau_{2i}\) pode ser escrito como produto de \(3\)-ciclos.
+
+\textbf{Caso 1:} Se as duas transposições compartilham um elemento, isto é, se
+\[
+\tau_{2i-1}=(a\,b)\quad \text{e}\quad \tau_{2i}=(b\,c),
+\]
+com \(a,b,c\) distintos, e sem perda de generalidade, então:
+\[
+(a\,b)(b\,c) = (a\,b\,c),
+\]
+ou seja, o produto é um \(3\)-ciclo.
+
+\textbf{Caso 2:} Se as transposições são disjuntas, isto é, se
+\[
+\tau_{2i-1}=(a\,b)\quad \text{e}\quad \tau_{2i}=(c\,d),
+\]
+com \(a,b,c,d\) todos distintos, então pode-se verificar que:
+\[
+(a\,b)(c\,d) = (a\,b)(a\,c)(a\,c)(c\,d) = (a\,c\,b)(a\,c\,d).
+\]
+Ou seja, o produto de duas transposições disjuntas pode ser escrito como produto de dois \(3\)-ciclos.
+
+Em ambos os casos, cada par de transposições é expresso como produto de \(3\)-ciclos. Assim, \(\alpha\), que é o produto de um número par de transposições, pode ser reagrupada em produtos de \(3\)-ciclos. Concluímos que todo elemento de \(A_n\) pode ser escrito como produto de \(3\)-ciclos.
+
+\medskip
+
+\textbf{(b)} Seja fixos \(a,b\in\{1,2,\dots,n\}\) com \(a\neq b\). Pela parte (a), sabemos que \(A_n\) é gerado por \(3\)-ciclos. Mostraremos que, a partir dos \(3\)-ciclos da forma
+\[
+(a\,b\,l),\quad l\in \{1,2,\dots,n\} \text{ e } l\neq a,b,
+\]
+é possível obter qualquer \(3\)-ciclo de \(S_n\) (e, portanto, de \(A_n\)).
+
+Seja \((x\,y\,z)\) um \(3\)-ciclo arbitrário. Pela Proposição~\ref{lemma:decomposicao_permutacao} (parte (b)), como todos os \(3\)-ciclos possuem o mesmo tipo de decomposição, existe \(\sigma\in S_n\) tal que
+\[
+(x\,y\,z)=\sigma\,(a\,b\,l)\,\sigma^{-1},
+\]
+para algum \(l\neq a,b\). 
+
+Contudo, para garantir que o conjugador pertença a \(A_n\), observe que, se \(\sigma\) não for par, como \(n\ge3\) existem pelo menos três letras e, portanto, podemos compor \(\sigma\) com uma transposição que fixe \(a\) e \(b\) (por exemplo, uma transposição \(\tau=(l_1\,l_2)\) com \(l_1,l_2\notin\{a,b\}\)) de modo que \(\mu=\tau\sigma\in A_n\). Note que, como \(a\) e \(b\) estão fixos por essa transposição, temos:
+\[
+\mu\,(a\,b\,l)\,\mu^{-1} = \tau\,\sigma\,(a\,b\,l)\,\sigma^{-1}\,\tau^{-1} = \tau\,\bigl(\sigma\,(a\,b\,l)\,\sigma^{-1}\bigr)\,\tau^{-1} = \sigma\,(a\,b\,l)\,\sigma^{-1},
+\]
+pois \(\tau\) comuta com o \(3\)-ciclo \(\sigma\,(a\,b\,l)\,\sigma^{-1}\) (já que os pontos \(a\) e \(b\) permanecem fixos).
+
+Portanto, qualquer \(3\)-ciclo é conjugado (por um conjugador par) a um \(3\)-ciclo da forma \((a\,b\,l)\). Como \(A_n\) é gerado pelos \(3\)-ciclos, conclui-se que
+\[
+A_n = \left\langle\,\{ (a\,b\,l) \mid l\in\{1,2,\dots,n\},\,l\neq a,b \}\,\right\rangle.
+\]
+\end{proof}
+\end{novo}
+
+\begin{definition}
+\label{def:grupo_simples}
+    Um grupo $A$ é \textit{simples} se $A$ e $\{e\}$ são seus únicos subgrupos normais.
+\end{definition}
+
+\begin{novo}
+\begin{theorem}
+\label{theo:grupo_alternado_simples}
+    Seja $n=3$ ou $n \geq 5$. Então $A_n$ é um grupo simples.
+\end{theorem}
+\begin{proof}
+    Seja \(N\) um subgrupo normal não trivial de \(A_n\). Nosso objetivo é mostrar que \(N = A_n\).
+
+    \medskip
+
+    \textbf{Caso 1: \(n=3\).}  
+    Observa-se que \(A_3\) possui exatamente 3 elementos, ou seja, \(A_3 \simeq \mathbb{Z}_3\) é um grupo cíclico de ordem primo. Assim, os únicos subgrupos (e, em particular, os únicos subgrupos normais) de \(A_3\) são \(\{e\}\) e \(A_3\). Portanto, \(A_3\) é simples.
+
+    \medskip
+
+    \textbf{Caso 2: \(n\geq 5\).}  
+    Seja \(1\neq \tau\in N\). Pela Proposição~\ref{prop:A_n_3_ciclos}, todo elemento de \(A_n\) pode ser escrito como um produto de \(3\)-ciclos. Existem duas possibilidades:
+
+    \begin{enumerate}[label=\textbf{(\alph*)}]
+        \item Se \(\tau\) é um \(3\)-ciclo, então temos um \(3\)-ciclo não trivial em \(N\).  
+        \item Se \(\tau\) não é um \(3\)-ciclo, considere sua decomposição em ciclos disjuntos. Em algum dos fatores haverá um ciclo de comprimento diferente de 1 e, utilizando as técnicas já demonstradas (por exemplo, o fato de que o produto de duas transposições disjuntas pode ser escrito como o produto de dois \(3\)-ciclos, como na igualdade
+        \[
+        (a\,b)(c\,d) = (a\,c\,b)(a\,c\,d),
+        \]
+        que foi verificada anteriormente), pode-se encontrar, por conjugação, um \(3\)-ciclo que esteja contido em \(N\).  
+    \end{enumerate}
+
+    Em ambos os casos, concluímos que \(N\) contém um \(3\)-ciclo não trivial.
+
+    Pela Proposição~\ref{prop:A_n_3_ciclos} (item (b)) e pelo Lema~\ref{lemma:decomposicao_permutacao} (parte (c)), todos os \(3\)-ciclos de \(A_n\) são conjugados entre si (na medida em que cada \(3\)-ciclo deixa pelo menos duas letras fixas, o que ocorre para \(n\ge5\)). Como \(N\) é normal, se contém um \(3\)-ciclo \(\rho\), então para todo \(\sigma\in A_n\) temos
+    \[
+    \sigma\,\rho\,\sigma^{-1} \in N.
+    \]
+    Ou seja, \(N\) contém todos os \(3\)-ciclos de \(A_n\).
+
+    Por fim, como \(A_n\) é gerado pelos \(3\)-ciclos (vide Proposição~\ref{prop:A_n_3_ciclos}, item (b)), temos que \(N = A_n\).
+
+    \medskip
+
+    Assim, os únicos subgrupos normais de \(A_n\) são \(\{e\}\) e \(A_n\), o que, de acordo com a Definição~\ref{def:grupo_simples}, significa que \(A_n\) é simples.
+\end{proof}
+
 \end{novo}
 
 \end{document}
