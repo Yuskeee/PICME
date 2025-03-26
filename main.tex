@@ -773,7 +773,7 @@ Seja $f:(A,\cdot) \rightarrow (\mathcal{A}, \times)$, então:
     \end{theorem}
     
     \begin{proof}
-    Temos pelo Lema \ref{lemma:H_intersec_N_normal_to_H} que
+    Temos pel o Lema \ref{lemma:H_intersec_N_normal_to_H} que
     \[H \cap N \triangleleft H.\]
     
     Agora, seja $f:H \rightarrow HN/N$, $f(h) = hN$. Mostraremos que $f$ é um homomorfismo já que
@@ -1451,7 +1451,6 @@ Dados $\alpha, \beta \in S_n$ dois ciclos disjuntos, então $\alpha \beta = \bet
     Concluímos que a fatoração de $\alpha$ em ciclos disjuntos é única a menos da ordem dos fatores.
 \end{proof}
 
-\begin{novo}
 \begin{proposition}
 \label{prop:tres_prop_S_n_transposicoes}
     Considere as seguintes proposições:
@@ -1466,22 +1465,22 @@ Dados $\alpha, \beta \in S_n$ dois ciclos disjuntos, então $\alpha \beta = \bet
     Agora, para $\alpha \in S_n \setminus Id$, considere a proposição \ref{prop:fatoracao_ciclos_disjuntos}. Assim,
     \[\alpha = \sigma_1 \sigma_2 \dots \sigma_k,\]
     onde $\sigma_1, \sigma_2, \dots, \sigma_k$ são ciclos disjuntos de ordem maior ou igual a $2$.
-    Ora, note que, para $1 \leq i \leq k$, tem-se que, sem perda de generalidade,
+    Ora, note que, para $1 \leq i \leq k$, tem-se que, para j-ciclos sem perda de generalidade,
     \begin{align*}
         \sigma_i &= (x_{i1} x_{i2} \dots x_{ij}) \\
         &= (x_{i1} x_{ij}) (x_{i1} x_{i(j-1)}) \dots (x_{i1} x_{i2}).
     \end{align*}
     Assim, $\alpha$ pode ser reescrita como um produto de transposições,
-    \[\alpha = ((x_{11} x_{1j}) (x_{11} x_{1(j-1)}) \dots (x_{11} x_{12})) (x_{21} x_{2j}) \dots,\]
+    \[\alpha = ((x_{11} x_{1j}) (x_{11} x_{1(j-1)}) \dots (x_{11} x_{12})) \dots ((x_{k1} x_{kj}) (x_{k1} x_{k(j-1)}) \dots (x_{k1} x_{k2})),\]
     como queríamos mostrar.
 
-    Uma vez provado o item (a), é claro que $\gen{(1 \ 2), (1 \ 3), \dots, (1 \ n)} \leq S_n$, assim é suficiente para o item (b) mostrar que toda transposição $(i \ j)$ pode ser escrito como um produto dos elementos do subgrupo gerado $\gen{(1 \ 2), (1 \ 3), \dots, (1 \ n)}$. Ora,
+    É claro que $\gen{(1 \ 2), (1 \ 3), \dots, (1 \ n)} \leq S_n$. Uma vez provado o item (a), é suficiente para o item (b) mostrar que toda transposição $(i \ j)$ pode ser escrito como um produto dos elementos do subgrupo gerado $\gen{(1 \ 2), (1 \ 3), \dots, (1 \ n)}$. Ora,
     \[(i \ j) = (1 \ i) (1 \ j) (1 \ i),\]
     se $i \not= j$, como queríamos.
 
-    Para o item (c), é claro que $\gen{(1 \ 2), (2 \ 3), (3 \ 4), \dots, (n-1 \ n)} \leq S_n$, e é suficiente mostrar que toda transposição $(1 \ i) \in \gen{(1 \ 2), (2 \ 3), (3 \ 4), \dots, (n-1 \ n)}$ Considerando a prova do item (b), tem-se que para $i = 2$,
+    Para o item (c), é claro que $\gen{(1 \ 2), (2 \ 3), (3 \ 4), \dots, (n-1 \ n)} \leq S_n$, e é suficiente mostrar que toda transposição $(1 \ i) \in \gen{(1 \ 2), (2 \ 3), (3 \ 4), \dots, (n-1 \ n)}$. Considerando a prova do item (b), tem-se que para $i = 2$,
     \[(1 \ 2) \in \gen{(1 \ 2), (2 \ 3), (3 \ 4), \dots, (n-1 \ n)}.\]
-    Por indução em $i$, $\forall i \geq 2$, e adotando-se a hipótese de que $(1 \ i) \in \gen{(1 \ 2), (2 \ 3), (3 \ 4), \dots, (n-1 \ n)}$,
+    Por indução em $i$, $\forall i \geq 2$, e adotando-se a hipótese de que $$(1 \ i) \in \gen{(1 \ 2), (2 \ 3), (3 \ 4), \dots, (n-1 \ n)}$$,
     \[(1 \ i) (i \ i+1) (1 \ i) = (1 \ i+1).\]
     Assim, $\forall i \geq 2$,
     \[(1 \ i) \in \gen{(1 \ 2), (2 \ 3), (3 \ 4), \dots, (n-1 \ n)},\]
@@ -1493,6 +1492,7 @@ Dados $\alpha, \beta \in S_n$ dois ciclos disjuntos, então $\alpha \beta = \bet
     Seja $\alpha \in S_n$, tal que $\alpha = \sigma_1 \sigma_2 \dots \sigma_k$ é uma fatoração qualquer como produto de transposições. Então a paridade de $k$ é única, isto é, ou $k$ é sempre par para qualquer fatoração de $\alpha$ em transposições, ou $k$ é sempre ímpar para qualquer fatoração de $\alpha$ em transposições.  Em outras palavras, a paridade do número de transposições numa fatoração de uma permutação $\alpha \in S_n$ é invariante. Essa paridade define a paridade (ou sinal) da permutação.
 \end{proposition}
 \begin{proof}
+    Vide demonstração da proposição V.10.5 do livro Elementos de Álgebra \cite{GARCIA2013}.
     % Sejam $x_1, \dots, x_n$ $n$ incógnitas, e considere
     % $$ \Phi = \prod_{1 \leq i < j \leq n} (x_j - x_i). $$
     % Dada uma permutação $\sigma \in S_n$, defina uma função $f_\sigma : \{\Phi, -\Phi\} \to \{\Phi, -\Phi\}$ por
@@ -1536,28 +1536,61 @@ Dados $\alpha, \beta \in S_n$ dois ciclos disjuntos, então $\alpha \beta = \bet
 \end{proposition}
 
 \begin{proof}
-    Considere a função $\psi: S_n \rightarrow \{1, -1\}$ tal que $\psi(\alpha) = 1$ se $\alpha$ é par e $\psi(\alpha) = -1$ se $\alpha$ é ímpar. É imediato que $\psi$ está bem definida. Mostraremos agora que $\psi$ é um homomorfismo. Considere $\alpha, \beta \in S_n$. Para o primeiro caso e sem perda de generalidade, considere também que $\alpha$ seja par e $\beta$ seja ímpar, então
+    Considere a função $\psi: S_n \rightarrow \{1, -1\}$, onde $\{1, -1\} = \mathbb{Z}/2\mathbb{Z}^*$ (único grupo multiplicativo de dois elementos), tal que $\psi(\alpha) = 1$ se $\alpha$ é par e $\psi(\alpha) = -1$ se $\alpha$ é ímpar. Note que $\psi$ é bem definida pela proposição \ref{prop:fatoracao_ciclos_disjuntos}. Mostraremos agora que $\psi$ é um homomorfismo. Considere $\alpha, \beta \in S_n$. Para o primeiro caso e sem perda de generalidade, considere também que $\alpha$ seja par e $\beta$ seja ímpar, então
     \[\psi(\alpha \beta) =  -1 = \psi(\alpha) \psi(\beta).\]
     Considere agora o caso em que ambos $\alpha$ e $\beta$ são pares (cuja demonstração é análoga ao caso em que ambos são ímpares),
     \[\psi(\alpha \beta) = +1 = \psi(\alpha) \psi(\beta).\]
     Isso mostra que $\psi$ é um homomorfismo.
-    Ora, como $S_n$ possui tanto elementos ímpares quanto pares, tem-se que $\psi$ é um homomorfismo sobrejetivo.
+    Ora, como $S_n$ possui tantos elementos ímpares quantos pares, tem-se que $\psi$ é um homomorfismo sobrejetivo.
 \end{proof}
-\end{novo}
 
 \begin{novo}
 \begin{proposition}
 \label{prop:permutacoes_subgrupo_OU_indice2}
-    Seja $H$ um subgrupo de $S_n$, então $H < A_n$ ou (exclusão mútua) o índice $(H:H \cap A_n) = 2$.
+    Seja $H$ um subgrupo de $S_n$, então ou $H < A_n$ ou o índice $(H:H \cap A_n) = 2$.
 \end{proposition}
 \begin{proof}
-    Primeiro, suponhamos $H < A_n$. É imediato que
-    \[(H:H \cap A_n) = (H:H) = 1.\]
-    Agora, suponhamos $(H:H \cap A_n) = 2$. Nesse caso, existem duas classes laterais distintas de $H \cap A_n$. Uma dessas classes laterais é $H \cap A_n$. A outra pode ser escrita como:
-    \[\alpha (H \cap A_n),\]
-    para $\alpha \in H$.
-    Ora, caso $\alpha$ seja uma permutação par, $\alpha (H \cap A_n)$ seria equivalente a $H \cap A_n$, e entraríamos em contradição que existem duas classes laterais distintas. Assim, $\alpha$ é ímpar e $H$ não pode ser subgrupo de $A_n$.
-\end{proof}
+    Consideremos o homomorfismo
+    \[
+    \psi: S_n \to \{1, -1\},
+    \]
+    definido por
+    \[
+    \psi(\alpha) = 
+    \begin{cases}
+    1, & \text{se } \alpha \text{ é par}, \\
+    -1, & \text{se } \alpha \text{ é ímpar}.
+    \end{cases}
+    \]
+    Restrinjimos \(\psi\) a \(H\) e consideramos a função
+    \[
+    \psi|_H : H \to \{1, -1\}.
+    \]
+    Como \(\psi\) é um homomorfismo, sua restrição \(\psi|_H\) também o é. Note que o núcleo de \(\psi|_H\) é dado por
+    \[
+    \ker (\psi|_H) = \{ \alpha \in H \mid \psi(\alpha)=1 \},
+    \]
+    isto é,
+    \[
+    \ker (\psi|_H)= H\cap A_n.
+    \]
+    
+    Pelo Primeiro Teorema de Isomorfismo, temos
+    \[
+    H/(H\cap A_n) \simeq \operatorname{im} (\psi|_H).
+    \]
+    Como \(\operatorname{im} (\psi|_H)\) é um subgrupo de \(\{1,-1\}\), e este possui apenas dois subgrupos (o trivial \(\{1\}\) e o próprio \(\{1,-1\}\)), temos duas possibilidades:
+    
+    \begin{enumerate}
+        \item Se \(\operatorname{im} (\psi|_H) = \{1\}\), então \(\psi(\alpha)=1\) para todo \(\alpha \in H\); ou seja, todos os elementos de \(H\) são pares, isto é, \(H \leq A_n\).
+        \item Se \(\operatorname{im} (\psi|_H) = \{1, -1\}\), então \(H/(H\cap A_n)\) é isomorfo a \(\{1,-1\}\) e, portanto, tem exatamente 2 elementos. Assim,
+        \[
+        [H : H\cap A_n] = 2.
+        \]
+    \end{enumerate}
+    
+    Logo, ou \(H\) está contido em \(A_n\) ou \([H : H\cap A_n]=2\), como queríamos demonstrar.
+    \end{proof}
 \end{novo}
 
 \begin{novo}
@@ -1569,7 +1602,6 @@ Dados $\alpha, \beta \in S_n$ dois ciclos disjuntos, então $\alpha \beta = \bet
 \end{definition}
 \end{novo}
 
-\begin{novo}
 \begin{lemma}
 \label{lemma:decomposicao_permutacao}
     Considere $n \geq 2$. Para uma permutação $\rho \in S_n$, tal que $\rho = (a_{11} \dots a_{1r_1}) \dots (a_{t1} \dots a_{tr_t})$ a sua decomposição em ciclos disjuntos, tem-se as seguintes afirmações:
@@ -1594,9 +1626,10 @@ Dados $\alpha, \beta \in S_n$ dois ciclos disjuntos, então $\alpha \beta = \bet
     \sigma\rho\sigma^{-1}(x_j)=\sigma\Bigl(\rho(a_{1j})\Bigr)=\sigma(a_{1,j+1}),
     \]
     com a convenção de que $a_{1,r_1+1}=a_{11}$. Assim, a ação de $\sigma\rho\sigma^{-1}$ sobre os elementos $\sigma(a_{11}),\sigma(a_{12}),\dots,\sigma(a_{1r_1})$ corresponde ao ciclo
-    \[
-    (\sigma(a_{11})\,\sigma(a_{12})\,\dots\,\sigma(a_{1r_1})).
-    \]
+    \begin{align*}
+    (\sigma(a_{12})\,\sigma(a_{13})\,\dots\,\sigma(a_{1r_1+1})) &= (\sigma(a_{1r_1+1})\, \sigma(a_{12})\,\dots\,\sigma(a_{1r_1})) \\
+    &= (\sigma(a_{11})\,\sigma(a_{12})\,\dots\,\sigma(a_{1r_1})).
+    \end{align*}
     Como os ciclos da decomposição de $\rho$ são disjuntos, o mesmo argumento vale para cada um deles e, portanto,
     \[
     \sigma\rho\sigma^{-1} = \bigl(\sigma(a_{11})\,\sigma(a_{12})\,\dots\,\sigma(a_{1r_1})\bigr)
@@ -1658,9 +1691,7 @@ Dados $\alpha, \beta \in S_n$ dois ciclos disjuntos, então $\alpha \beta = \bet
     \]
     Portanto, existe $\mu\in A_n$ tal que $\rho'=\mu\,\rho\,\mu^{-1}$, concluindo o item (c).
 \end{proof}
-\end{novo}
 
-\begin{novo}
 \begin{proposition}
 \label{prop:A_n_3_ciclos}
     Para $n \geq 3$:
@@ -1728,14 +1759,12 @@ Portanto, qualquer \(3\)-ciclo é conjugado (por um conjugador par) a um \(3\)-c
 A_n = \left\langle\,\{ (a\,b\,l) \mid l\in\{1,2,\dots,n\},\,l\neq a,b \}\,\right\rangle.
 \]
 \end{proof}
-\end{novo}
 
 \begin{definition}
 \label{def:grupo_simples}
     Um grupo $A$ é \textit{simples} se $A$ e $\{e\}$ são seus únicos subgrupos normais.
 \end{definition}
 
-\begin{novo}
 \begin{theorem}
 \label{theo:grupo_alternado_simples}
     Seja $n=3$ ou $n \geq 5$. Então $A_n$ é um grupo simples.
@@ -1746,7 +1775,7 @@ A_n = \left\langle\,\{ (a\,b\,l) \mid l\in\{1,2,\dots,n\},\,l\neq a,b \}\,\right
     \medskip
 
     \textbf{Caso 1: \(n=3\).}  
-    Observa-se que \(A_3\) possui exatamente 3 elementos, ou seja, \(A_3 \simeq \mathbb{Z}_3\) é um grupo cíclico de ordem primo. Assim, os únicos subgrupos (e, em particular, os únicos subgrupos normais) de \(A_3\) são \(\{e\}\) e \(A_3\). Portanto, \(A_3\) é simples.
+    Observa-se que \(A_3\) possui exatamente 3 elementos, ou seja, \(A_3 \simeq \mathbb{Z}/3\mathbb{Z}\) é um grupo cíclico de ordem primo. Assim, os únicos subgrupos (e, em particular, os únicos subgrupos normais) de \(A_3\) são \(\{e\}\) e \(A_3\). Portanto, \(A_3\) é simples.
 
     \medskip
 
@@ -1777,6 +1806,11 @@ A_n = \left\langle\,\{ (a\,b\,l) \mid l\in\{1,2,\dots,n\},\,l\neq a,b \}\,\right
     Assim, os únicos subgrupos normais de \(A_n\) são \(\{e\}\) e \(A_n\), o que, de acordo com a Definição~\ref{def:grupo_simples}, significa que \(A_n\) é simples.
 \end{proof}
 
-\end{novo}
+\begin{ignorar}
+    ESCREVER AQUI SOBRE GRUPOS DE KLEIN
+\end{ignorar}
+
+\bibliographystyle{plain}
+\bibliography{main}
 
 \end{document}
