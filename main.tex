@@ -1806,9 +1806,49 @@ A_n = \left\langle\,\{ (a\,b\,l) \mid l\in\{1,2,\dots,n\},\,l\neq a,b \}\,\right
     Assim, os únicos subgrupos normais de \(A_n\) são \(\{e\}\) e \(A_n\), o que, de acordo com a Definição~\ref{def:grupo_simples}, significa que \(A_n\) é simples.
 \end{proof}
 
-\begin{ignorar}
-    ESCREVER AQUI SOBRE GRUPOS DE KLEIN
-\end{ignorar}
+\begin{definition}
+\label{def:klein_group}
+    \begin{novo}
+    O grupo de quatro elementos $\{id, (12)(34), (13)(24), (14)(23)\}$ é chamado de \textit{grupo de Klein}.
+    \end{novo}
+\end{definition}
+
+\begin{theorem}
+\label{klein_subgrupos}
+    \begin{novo}
+    Os únicos subgrupos normais do grupo alternado $A_4$ são $\{id\}$, $A_4$ e o grupo de Klein (denotado aqui por $K$). 
+    \end{novo}
+\end{theorem}
+
+\begin{novo}
+\begin{proof}
+    A ordem de \(A_4\) é \(12\). Os elementos de \(A_4\) se dividem em três tipos:
+    \begin{itemize}
+        \item A identidade \(id\);
+        \item Oito 3‑ciclos (elementos de ordem 3);
+        \item Três duplas transposições (elementos de ordem 2), que, juntamente com a identidade, formam o grupo de Klein
+        \[
+        K = \{id,\,(12)(34),\,(13)(24),\,(14)(23)\}.
+        \]
+    \end{itemize}
+    Primeiramente, é claro que $\{id\}$ e $A_4$ são subgrupos normais de $A_4$. Mostraremos, agora, que $K$ também é. Uma vez que todos os elementos não-identidade em $K$ podem ser escritos como produtos de ciclos disjuntos, tem-se pela proposição \ref{prop:permutacoes_disjuntas_comutacao} $\forall a \in A_4$:
+    \begin{align*}
+        a \ id &= id \ a \\
+        a (12)(34) &= (12)(34) a \\
+        a (13)(24) &= (13)(24) a \\
+        a (14)(23) &= (14)(23) a \\
+        \Rightarrow aK &= Ka, \forall a \in A_4,
+    \end{align*}
+    i.e., $K$ é subgrupo normal de $A_4$.
+
+    Resta mostrar que esses são os únicos subgrupos normais de $A_4$.
+
+    Assim, suponhamos $H \leq A_4$, tal que $H \not= \{id\}$. Se $H$ possui 3-ciclos, digamos $(123)$, então também possui $(123)^{-1} = (132)$, assim como $(324)(132)(324)^{-1} = (124)$, pela definição de subgrupo normal.
+    Ora, pela proposição \ref{prop:A_n_3_ciclos}, $A_4 = \gen{(123),(124)} = H$.
+
+    Por fim, se $H$ não possui 3-ciclos, então deve possuir alguma dupla transposição, digamos $(12)(34)$. Assim, $H$ contêm também $(234)(12)(34)(234)^{-1} = (13)(24)$ e $(12)(34)(13)(24) = (14)(23)$. Assim, $H = K$, mostrando a unicidade dos três subgrupos.
+\end{proof}
+\end{novo}
 
 \bibliographystyle{plain}
 \bibliography{main}
