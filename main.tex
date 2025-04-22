@@ -1802,11 +1802,10 @@ A_n = \left\langle\,\{ (a\,b\,l) \mid l\in\{1,2,\dots,n\},\,l\neq a,b \}\,\right
     Assim, os únicos subgrupos normais de \(A_n\) são \(\{e\}\) e \(A_n\), o que, de acordo com a Definição~\ref{def:grupo_simples}, significa que \(A_n\) é simples.
 \end{proof}
 
-\begin{novo}
 \begin{proposition}
     O conjunto $K \subset S_4$ dado por\
     \[K = \{id, (12)(34), (13)(24), (14)(23)\}\]
-    é um grupo.
+    é um grupo abeliano.
 \end{proposition}
 
 \begin{proof}
@@ -1833,28 +1832,47 @@ A_n = \left\langle\,\{ (a\,b\,l) \mid l\in\{1,2,\dots,n\},\,l\neq a,b \}\,\right
         \end{itemize}
     \end{itemize}
 
-    Note que cada elemento não identidade possui ordem \(2\), ou seja, para \(g \in \{(12)(34), (13)(24), (14)(23)\}\) temos:
-    \[
-    g^2 = id,
-    \]
-    o que implica que o inverso de cada elemento é o próprio elemento. Assim, todo inverso também está contido em \(K\).
-
-    Como \(K\) satisfaz a presença do elemento identidade, o fechamento sob a operação e a existência de inversos, concluímos que \(K\) é um grupo.
+    Como \(K\) satisfaz o fechamento sob a operação e a existência de inversos, concluímos que \(K\) é um grupo. Além disso, pela tabela de multiplicação é claro pela simetria que \(K\) é abeliano, pois a multiplicação é comutativa. Assim, \(K\) é um grupo abeliano.
 \end{proof}
-\end{novo}
 
 \begin{definition}
 \label{def:klein_group}
-    \begin{novo}
-    O grupo de quatro elementos $K = \{id, (12)(34), (13)(24), (14)(23)\}$ é chamado de \textit{grupo de Klein}.
-    \end{novo}
+    O grupo de quatro elementos $$K = \{id, (12)(34), (13)(24), (14)(23)\}$$ é chamado de \textit{grupo de Klein}.
 \end{definition}
+
+\begin{novo}
+\begin{proposition}
+\label{prop:conjugacao_transpocicao}
+    Sejam \(a,b,c,d\) quatro elementos distintos de \(\{1,2,3,4\}\). Então, para todo \(x\in S_4\), temos:
+    \[
+    x\,\bigl((a\,b)(c\,d)\bigr)\,x^{-1} = \bigl(x(a)\,x(b)\bigr)\,\bigl(x(c)\,x(d)\bigr).
+    \]
+    Em particular, se \(x\) é um \(3\)-ciclo, então \(x\,\bigl((a\,b)(c\,d)\bigr)\,x^{-1}\) é uma dupla transposição.
+\end{proposition}
+\begin{proof}
+    % Seja \(x\in S_4\) e considere \(y=x\,\bigl((a\,b)(c\,d)\bigr)\,x^{-1}\). Então, temos:
+    % \[
+    % y(x(a)) = x\,\bigl((a\,b)(c\,d)\bigr)\,x^{-1}(x(a)) = x\,\bigl((a\,b)(c\,d)\bigr)(a) = x(b),
+    % \]
+    % e
+    % \[
+    % y(x(c)) = x\,\bigl((a\,b)(c\,d)\bigr)\,x^{-1}(x(c)) = x\,\bigl((a\,b)(c\,d)\bigr)(c) = x(d).
+    % \]
+    % Portanto, \(y\) é a transposição \(\bigl(x(a)\,x(b)\bigr)\,\bigl(x(c)\,x(d)\bigr)\).
+
+    % Se \(x\) é um \(3\)-ciclo, então \(y\) é uma dupla transposição.
+    % De fato, como \(x\) é um \(3\)-ciclo, temos que \(x(a)\), \(x(b)\), \(x(c)\) e \(x(d)\) são todos distintos. Assim, \(y\) é uma dupla transposição.
+    % Portanto, \(y\) é uma transposição do tipo \((x(a)\,x(b))(x(c)\,x(d))\), que é uma dupla transposição.
+    % Assim,
+    % \[
+    % x\,\bigl((a\,b)(c\,d)\bigr)\,x^{-1} = \bigl(x(a)\,x(b)\bigr)\,\bigl(x(c)\,x(d)\bigr).
+    % \]
+\end{proof}
+\end{novo}
 
 \begin{theorem}
 \label{klein_subgrupos}
-    \begin{novo}
     Os únicos subgrupos normais do grupo alternado $A_4$ são $\{id\}$, $A_4$ e o grupo de Klein (denotado aqui por $K$). 
-    \end{novo}
 \end{theorem}
 
 \begin{novo}
@@ -1913,16 +1931,51 @@ A_n = \left\langle\,\{ (a\,b\,l) \mid l\in\{1,2,\dots,n\},\,l\neq a,b \}\,\right
     \[
     A_4 = \{\, id,\,(123),\,(132),\,(124),\,(142),\,(134),\,(143),\,(234),\,(243),\,(12)(34),\,(13)(24),\,(14)(23) \,\}.
     \]
-    Note que \(A_4\) possui exatamente 12 elementos: a identidade, os oito 3‑ciclos (cada um com 2 transposições) e as três duplas transposições (cada uma com 2 transposições).
-    Primeiramente, é claro que $\{id\}$ e $A_4$ são subgrupos normais de $A_4$. Mostraremos, agora, que $K$ também é. Uma vez que todos os elementos não-identidade em $K$ podem ser escritos como produtos de ciclos disjuntos, tem-se pela proposição \ref{prop:permutacoes_disjuntas_comutacao} $\forall a \in A_4$:
-    \begin{align*}
-        a \ id &= id \ a \\
-        a (12)(34) &= (12)(34) a \\
-        a (13)(24) &= (13)(24) a \\
-        a (14)(23) &= (14)(23) a \\
-        \Rightarrow aK &= Ka, \forall a \in A_4,
-    \end{align*}
-    i.e., $K$ é subgrupo normal de $A_4$.
+    Para provar que \(K\triangleleft A_4\), basta mostrar que, para todo
+    \(a\in A_4\) e todo \(k\in K\),
+    \[
+    a\,k\,a^{-1} \in K.
+    \]
+    Fazemos isso em três casos:
+
+    \medskip
+    \textbf{Caso 1:} \(a = e\).\\
+    Temos
+    \[
+    e\,k\,e^{-1} = k \in K.
+    \]
+
+    \medskip
+    \textbf{Caso 2:} \(a\) é uma dupla transposição, ou seja, \(a\in K\).\\
+    Como \(K\) é abeliano, \(a k = k a\) e portanto
+    \[
+    a\,k\,a^{-1} = k\,a\,a^{-1} = k \in K.
+    \]
+
+    \medskip
+    \textbf{Caso 3:} \(a\) é um 3‑ciclo.\\
+    Tome
+    \[
+    a = (p\,q\,r),
+    \]
+    onde \(\{p,q,r\}\subseteq\{1,2,3,4\}\), e
+    \[
+    k = (i\,j)(\ell\,m)\in K,
+    \quad
+    \{i,j,\ell,m\}=\{1,2,3,4\}.
+    \]
+    Então, pela proposição \ref{prop:conjugacao_transpocicao},
+    \[
+    a\,k\,a^{-1}
+    = \bigl(a(i)\;a(j)\bigr)\,\bigl(a(\ell)\;a(m)\bigr),
+    \]
+    que é novamente uma dupla de transposições disjuntas, isto é,
+    \[
+    a\,k\,a^{-1}\in\{(12)(34),\,(13)(24),\,(14)(23)\} = K.
+    \]
+
+    \smallskip
+    Em todos os casos concluímos \(a\,k\,a^{-1}\in K\), i.e., $K$ é subgrupo normal de $A_4$.
 
     Resta mostrar que esses são os únicos subgrupos normais de $A_4$.
 
@@ -1941,6 +1994,31 @@ A_n = \left\langle\,\{ (a\,b\,l) \mid l\in\{1,2,\dots,n\},\,l\neq a,b \}\,\right
         \item Seja $n = 4$. Então os únicos subgrupos normais de $S_4$ são $\{id\}$, $A_4$, o grupo de Klein $K$ e $S_4$.
     \end{enumerate}
 \end{proposition}
+\begin{proposition}
+\label{prop:S_n_subgrupos_normais}
+    \begin{enumerate}[label=\alph*)]
+        \item Seja $n = 3$ ou $n \geq 5$. Então os únicos subgrupos normais de $S_n$ são $\{id\}$, $A_n$ e $S_n$.
+        \item Seja $n = 4$. Então os únicos subgrupos normais de $S_4$ são $\{id\}$, $A_4$, o grupo de Klein $K$ e $S_4$.
+    \end{enumerate}
+\end{proposition}
+\begin{proof}
+    \begin{enumerate}[label=\alph*)]
+        \item É claro que $\{id\}, A_n$ e $S_n$ são subgrupos normais de $S_n$.
+        
+        Mostraremos agora a unicidade dos mesmos. Seja $H \triangleleft S_n$. Consideremos também o homomorfismo $\psi: H \rightarrow \mathbb{Z}/2\mathbb{Z}^*$, já visto anteriormente com $\psi(\alpha) = 1$ se $\alpha$ é par e $\psi(\alpha) = -1$ se $\alpha$ é ímpar, para $alpha \in S_n$.
+
+        Se $H$ contém um elemento ímpar, então $\psi(H) = \mathbb{Z}/2\mathbb{Z}^*$ e, portanto, $H = S_n$. Pela proposição \ref{prop:permutacoes_subgrupo_OU_indice2}, tem-se que ou o índice $(H:H\cap A_n) = 2$ ou $H < A_n$. Assim, dividiremos em casos:
+        Caso $H < A_n$: Como $H \triangleleft S_n$, temos que $H$ é normal em $A_n$ e, portanto, $H = A_n$ ou $H = \{id\}$, pelo teorema \ref{theo:grupo_alternado_simples}.
+
+        Caso $(H:H\cap A_n) = 2$: Como $H \triangleleft S_n$, então $H \cap A_n \triangleleft A_n$. E, pelo teorema \ref{theo:grupo_alternado_simples}, tem-se que $H \cap A_n = \{id\}$ ou $H \cap A_n = A_n$. Assim, $|H| = 2$ ou $H = S_n$. 
+
+        Caso $|H| = 2$: Como $H \triangleleft S_n$, então $H \cap A_n \triangleleft A_n$. E, pelo teorema \ref{theo:grupo_alternado_simples}, tem-se que $H \cap A_n = \{id\}$. Assim, $H = \{id, \tau\}$, onde $\tau$ é uma transposição. Ora, como $H$ é um subgrupo, $\tau^2 = id \in H$. Além disso, como $H$ é normal, para qualquer $\sigma \in S_n$, $\sigma \tau \sigma^{-1} \in H$. Assim, $\sigma \tau \sigma^{-1} = id$ ou $\sigma \tau \sigma^{-1} = \tau$. No entanto, isso implica que $\tau$ comuta com todos os elementos de $S_n$, o que é uma contradição, pois $\tau$ não comuta com todas as permutações. Portanto, $H$ não pode ter ordem 2.
+
+        Concluímos que os únicos subgrupos normais de $S_n$ são $\{id\}$, $A_n$ e $S_n$.
+
+        \item Para $n = 4$, sabemos que $A_4$ possui exatamente três subgrupos normais: $\{id\}$, $A_4$, e o grupo de Klein $K$, conforme demonstrado no teorema \ref{klein_subgrupos}. Como $A_4 \triangleleft S_4$ e $(S_4:A_4) = 2$, pelo \hyperref[theo:teorema_da_correspondencia]{Teorema da Correspondência}, qualquer subgrupo normal de $S_4$ que não esteja contido em $A_4$ deve ser igual a $S_4$. Além disso, qualquer subgrupo normal de $S_4$ que esteja contido em $A_4$ deve ser um dos subgrupos normais de $A_4$, ou seja, $\{id\}$, $A_4$, ou $K$. Portanto, os únicos subgrupos normais de $S_4$ são $\{id\}$, $A_4$, $K$, e $S_4$.
+    \end{enumerate}
+\end{proof}
 \end{novo}
 
 \chapter{Grupos Solúveis}
@@ -1953,6 +2031,8 @@ A_n = \left\langle\,\{ (a\,b\,l) \mid l\in\{1,2,\dots,n\},\,l\neq a,b \}\,\right
     \]
     tal que cada \(G_i\) é um subgrupo normal de \(G_{i+1}\) para \(i=0,1,\dots,n-1\).
 \end{definition}
+
+
 
 \bibliographystyle{plain}
 \bibliography{main}
