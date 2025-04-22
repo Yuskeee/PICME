@@ -1536,7 +1536,7 @@ Dados $\alpha, \beta \in S_n$ dois ciclos disjuntos, então $\alpha \beta = \bet
 \end{proposition}
 
 \begin{proof}
-    Considere a função $\psi: S_n \rightarrow \{1, -1\}$, onde $\{1, -1\} = \mathbb{Z}/2\mathbb{Z}^*$ (único grupo multiplicativo de dois elementos), tal que $\psi(\alpha) = 1$ se $\alpha$ é par e $\psi(\alpha) = -1$ se $\alpha$ é ímpar. Note que $\psi$ é bem definida pela proposição \ref{prop:fatoracao_ciclos_disjuntos}. Mostraremos agora que $\psi$ é um homomorfismo. Considere $\alpha, \beta \in S_n$. Para o primeiro caso e sem perda de generalidade, considere também que $\alpha$ seja par e $\beta$ seja ímpar, então
+    Considere a função $\psi: S_n \rightarrow \{1, -1\}$, onde $\{1, -1\} = (\mathbb{Z}/2\mathbb{Z})^*$ (único grupo multiplicativo de dois elementos), tal que $\psi(\alpha) = 1$ se $\alpha$ é par e $\psi(\alpha) = -1$ se $\alpha$ é ímpar. Note que $\psi$ é bem definida pela proposição \ref{prop:fatoracao_ciclos_disjuntos}. Mostraremos agora que $\psi$ é um homomorfismo. Considere $\alpha, \beta \in S_n$. Para o primeiro caso e sem perda de generalidade, considere também que $\alpha$ seja par e $\beta$ seja ímpar, então
     \[\psi(\alpha \beta) =  -1 = \psi(\alpha) \psi(\beta).\]
     Considere agora o caso em que ambos $\alpha$ e $\beta$ são pares (cuja demonstração é análoga ao caso em que ambos são ímpares),
     \[\psi(\alpha \beta) = +1 = \psi(\alpha) \psi(\beta).\]
@@ -1850,23 +1850,9 @@ A_n = \left\langle\,\{ (a\,b\,l) \mid l\in\{1,2,\dots,n\},\,l\neq a,b \}\,\right
     Em particular, se \(x\) é um \(3\)-ciclo, então \(x\,\bigl((a\,b)(c\,d)\bigr)\,x^{-1}\) é uma dupla transposição.
 \end{proposition}
 \begin{proof}
-    % Seja \(x\in S_4\) e considere \(y=x\,\bigl((a\,b)(c\,d)\bigr)\,x^{-1}\). Então, temos:
-    % \[
-    % y(x(a)) = x\,\bigl((a\,b)(c\,d)\bigr)\,x^{-1}(x(a)) = x\,\bigl((a\,b)(c\,d)\bigr)(a) = x(b),
-    % \]
-    % e
-    % \[
-    % y(x(c)) = x\,\bigl((a\,b)(c\,d)\bigr)\,x^{-1}(x(c)) = x\,\bigl((a\,b)(c\,d)\bigr)(c) = x(d).
-    % \]
-    % Portanto, \(y\) é a transposição \(\bigl(x(a)\,x(b)\bigr)\,\bigl(x(c)\,x(d)\bigr)\).
-
-    % Se \(x\) é um \(3\)-ciclo, então \(y\) é uma dupla transposição.
-    % De fato, como \(x\) é um \(3\)-ciclo, temos que \(x(a)\), \(x(b)\), \(x(c)\) e \(x(d)\) são todos distintos. Assim, \(y\) é uma dupla transposição.
-    % Portanto, \(y\) é uma transposição do tipo \((x(a)\,x(b))(x(c)\,x(d))\), que é uma dupla transposição.
-    % Assim,
-    % \[
-    % x\,\bigl((a\,b)(c\,d)\bigr)\,x^{-1} = \bigl(x(a)\,x(b)\bigr)\,\bigl(x(c)\,x(d)\bigr).
-    % \]
+    Observe que a proposição é um caso particular do Lema~\ref{lemma:decomposicao_permutacao} (parte (a)). Assim, tem-se 
+    \[x\,\bigl((a\,b)(c\,d)\bigr)\,x^{-1} = \bigl(x(a)\,x(b)\bigr)\,\bigl(x(c)\,x(d)\bigr),\]
+    que é uma dupla transposição.
 \end{proof}
 \end{novo}
 
@@ -1875,7 +1861,6 @@ A_n = \left\langle\,\{ (a\,b\,l) \mid l\in\{1,2,\dots,n\},\,l\neq a,b \}\,\right
     Os únicos subgrupos normais do grupo alternado $A_4$ são $\{id\}$, $A_4$ e o grupo de Klein (denotado aqui por $K$). 
 \end{theorem}
 
-\begin{novo}
 \begin{proof}
     Sabemos que o grupo simétrico \(S_4\) tem ordem $4! = 24$. Seus elementos podem ser classificados e expressos como produtos de transposições (2‑ciclos) da seguinte maneira:
 
@@ -1984,7 +1969,6 @@ A_n = \left\langle\,\{ (a\,b\,l) \mid l\in\{1,2,\dots,n\},\,l\neq a,b \}\,\right
 
     Por fim, se $H$ não possui 3-ciclos, então deve possuir alguma dupla transposição, digamos $(12)(34)$. Assim, $H$ contêm também $(234)(12)(34)(234)^{-1} = (13)(24)$ e $(12)(34)(13)(24) = (14)(23)$. Assim, $H = K$, mostrando a unicidade dos três subgrupos.
 \end{proof}
-\end{novo}
 
 \begin{novo}
 \begin{proposition}
@@ -2005,9 +1989,10 @@ A_n = \left\langle\,\{ (a\,b\,l) \mid l\in\{1,2,\dots,n\},\,l\neq a,b \}\,\right
     \begin{enumerate}[label=\alph*)]
         \item É claro que $\{id\}, A_n$ e $S_n$ são subgrupos normais de $S_n$.
         
-        Mostraremos agora a unicidade dos mesmos. Seja $H \triangleleft S_n$. Consideremos também o homomorfismo $\psi: H \rightarrow \mathbb{Z}/2\mathbb{Z}^*$, já visto anteriormente com $\psi(\alpha) = 1$ se $\alpha$ é par e $\psi(\alpha) = -1$ se $\alpha$ é ímpar, para $alpha \in S_n$.
+        Mostraremos agora a unicidade dos mesmos. Seja $H \triangleleft S_n$. Consideremos também o homomorfismo $\psi: H \rightarrow (\mathbb{Z}/2\mathbb{Z})^*$, já visto anteriormente com $\psi(\alpha) = 1$ se $\alpha$ é par e $\psi(\alpha) = -1$ se $\alpha$ é ímpar, para $\alpha \in S_n$.
 
-        Se $H$ contém um elemento ímpar, então $\psi(H) = \mathbb{Z}/2\mathbb{Z}^*$ e, portanto, $H = S_n$. Pela proposição \ref{prop:permutacoes_subgrupo_OU_indice2}, tem-se que ou o índice $(H:H\cap A_n) = 2$ ou $H < A_n$. Assim, dividiremos em casos:
+        Note que se $H$ não contém um elemento ímpar, então $H \subseteq A_n$. Como $H$ é normal em $S_n$, então $H \triangleleft A_n$. Assim, pelo teorema \ref{theo:grupo_alternado_simples}, temos que $H = A_n$ ou $H = \{id\}$.
+        Se $H$ contém um elemento ímpar, pela proposição \ref{prop:permutacoes_subgrupo_OU_indice2}, tem-se que ou o índice $(H:H\cap A_n) = 2$ ou $H < A_n$. Assim, dividiremos em casos:
         Caso $H < A_n$: Como $H \triangleleft S_n$, temos que $H$ é normal em $A_n$ e, portanto, $H = A_n$ ou $H = \{id\}$, pelo teorema \ref{theo:grupo_alternado_simples}.
 
         Caso $(H:H\cap A_n) = 2$: Como $H \triangleleft S_n$, então $H \cap A_n \triangleleft A_n$. E, pelo teorema \ref{theo:grupo_alternado_simples}, tem-se que $H \cap A_n = \{id\}$ ou $H \cap A_n = A_n$. Assim, $|H| = 2$ ou $H = S_n$. 
@@ -2016,7 +2001,7 @@ A_n = \left\langle\,\{ (a\,b\,l) \mid l\in\{1,2,\dots,n\},\,l\neq a,b \}\,\right
 
         Concluímos que os únicos subgrupos normais de $S_n$ são $\{id\}$, $A_n$ e $S_n$.
 
-        \item Para $n = 4$, sabemos que $A_4$ possui exatamente três subgrupos normais: $\{id\}$, $A_4$, e o grupo de Klein $K$, conforme demonstrado no teorema \ref{klein_subgrupos}. Como $A_4 \triangleleft S_4$ e $(S_4:A_4) = 2$, pelo \hyperref[theo:teorema_da_correspondencia]{Teorema da Correspondência}, qualquer subgrupo normal de $S_4$ que não esteja contido em $A_4$ deve ser igual a $S_4$. Além disso, qualquer subgrupo normal de $S_4$ que esteja contido em $A_4$ deve ser um dos subgrupos normais de $A_4$, ou seja, $\{id\}$, $A_4$, ou $K$. Portanto, os únicos subgrupos normais de $S_4$ são $\{id\}$, $A_4$, $K$, e $S_4$.
+        \item Para $n = 4$, sabemos que $A_4$ possui exatamente três subgrupos normais: $\{id\}$, $A_4$, e o grupo de Klein $K$, conforme demonstrado no teorema \ref{klein_subgrupos}. Como $A_4 \triangleleft S_4$ e $(S_4:A_4) = 2$, pelo \hyperref[theo:teorema_da_correspondencia]{Teorema da Correspondência}, tem-se uma bijeção entre o conjunto dos subgrupos de $S_4$ que contêm $A_4$ e o conjunto dos subgrupos de $S_4/A_4$, logo, qualquer subgrupo normal de $S_4$ que não esteja contido em $A_4$ deve ser igual a $S_4$. Além disso, qualquer subgrupo normal de $S_4$ que esteja contido em $A_4$ deve ser um dos subgrupos normais de $A_4$, ou seja, $\{id\}$, $A_4$, ou $K$. Portanto, os únicos subgrupos normais de $S_4$ são $\{id\}$, $A_4$, $K$, e $S_4$.
     \end{enumerate}
 \end{proof}
 \end{novo}
