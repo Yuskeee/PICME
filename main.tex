@@ -1995,9 +1995,9 @@ A_n = \left\langle\,\{ (a\,b\,l) \mid l\in\{1,2,\dots,n\},\,l\neq a,b \}\,\right
         Se $H$ contém um elemento ímpar, pela proposição \ref{prop:permutacoes_subgrupo_OU_indice2}, tem-se que ou o índice $(H:H\cap A_n) = 2$ ou $H < A_n$. Assim, dividiremos em casos:
         Caso $H < A_n$: Como $H \triangleleft S_n$, temos que $H$ é normal em $A_n$ e, portanto, $H = A_n$ ou $H = \{id\}$, pelo teorema \ref{theo:grupo_alternado_simples}.
 
-        Caso $(H:H\cap A_n) = 2$: Como $H \triangleleft S_n$, então $H \cap A_n \triangleleft A_n$. E, pelo teorema \ref{theo:grupo_alternado_simples}, tem-se que $H \cap A_n = \{id\}$ ou $H \cap A_n = A_n$. Assim, $|H| = 2$ ou $H = S_n$. 
+        Caso $(H:H\cap A_n) = 2$: Como $H \triangleleft S_n$, então $H \cap A_n \triangleleft A_n$. E, pelo teorema \ref{theo:grupo_alternado_simples}, tem-se que $H \cap A_n = \{id\}$ ou $H \cap A_n = A_n$. Assim, $|H| = 2$ ou $H = S_n$, respectivamente. 
 
-        Caso $|H| = 2$: Como $H \triangleleft S_n$, então $H \cap A_n \triangleleft A_n$. E, pelo teorema \ref{theo:grupo_alternado_simples}, tem-se que $H \cap A_n = \{id\}$. Assim, $H = \{id, \tau\}$, onde $\tau$ é uma transposição. Ora, como $H$ é um subgrupo, $\tau^2 = id \in H$. Além disso, como $H$ é normal, para qualquer $\sigma \in S_n$, $\sigma \tau \sigma^{-1} \in H$. Assim, $\sigma \tau \sigma^{-1} = id$ ou $\sigma \tau \sigma^{-1} = \tau$. No entanto, isso implica que $\tau$ comuta com todos os elementos de $S_n$, o que é uma contradição, pois $\tau$ não comuta com todas as permutações. Portanto, $H$ não pode ter ordem 2.
+        Caso $|H| = 2$, ou seja, $H \cap A_n = \{id\}$. Assim, $H = \{id, \tau\}$, onde $\tau$ é uma transposição. Ora, como $H$ é um subgrupo, $\tau^2 = id \in H$. Além disso, como $H$ é normal, para qualquer $\sigma \in S_n$, $\sigma \tau \sigma^{-1} \in H$. Assim, $\sigma \tau \sigma^{-1} = id$ ou $\sigma \tau \sigma^{-1} = \tau$. No entanto, isso implica que $\tau$ comuta com todos os elementos de $S_n$, o que é uma contradição, pois $\tau$ não comuta com todas as permutações. Portanto, $H$ não pode ter ordem 2.
 
         Concluímos que os únicos subgrupos normais de $S_n$ são $\{id\}$, $A_n$ e $S_n$.
 
@@ -2010,15 +2010,108 @@ A_n = \left\langle\,\{ (a\,b\,l) \mid l\in\{1,2,\dots,n\},\,l\neq a,b \}\,\right
 
 \begin{definition}
 \label{def:serie_subnormal}
-    Seja \(G\) um grupo. Uma série subnormal de \(G\) é uma sequência de subgrupos
+    Seja \(G\) um grupo. Uma série subnormal de \(G\), denotada aqui por $(*)$ é uma sequência de subgrupos
     \[
     \{e\} = G_0 \triangleleft G_1 \triangleleft G_2 \triangleleft \cdots \triangleleft G_n = G,
     \]
     tal que cada \(G_i\) é um subgrupo normal de \(G_{i+1}\) para \(i=0,1,\dots,n-1\).
 \end{definition}
 
+Observa-se que os \textit{grupos quocientes} da série $(*)$ são os grupos $G_{i+1}/G_i$, para \(i=0,1,\dots,n-1\). 
 
+\begin{definition}
+\label{def:comprimento_serie}
+    \begin{novo}
+        O \textit{comprimento} de uma série subnormal $(*)$ é o número de fatores quocientes $G_{i+1}/G_i$ que não são triviais.
+    \end{novo}
+\end{definition}
 
+\begin{definition}
+\label{def:refinamento_serie}
+    \begin{novo}
+        Uma série subnormal $(*)$ é um \textit{refinamento} de outra série subnormal $(*)$ se pode ser obtida de $(*)$ pela inserção de subgrupos normais intermediários. O refinamento é dito próprio se insere ao menos um novo subgrupo normal não presente originalmente em $(*)$.
+    \end{novo}
+\end{definition}
+
+\begin{definition}
+\label{def:serie_decomposicao}
+    \begin{novo}
+        Uma série subnormal é chamada de \textit{série de composição} de $G$ se não admite refinamento próprio.
+        
+        Em particular, em uma série de decomposição, cada quociente é um grupo simples, pois caso contrário haveria como inserir um subgrupo normal próprio em $G_{i+1}/G_i$, refinando a série.
+    \end{novo}
+\end{definition}
+
+\begin{proposition}
+\label{prop:nem_todo_grupo_admite_serie_decomposicao}
+    \novo{Existem grupos que não admitem série de composição.}
+\end{proposition}
+\begin{proof}
+    \begin{novo}
+        Por exemplo, o grupo aditivo $(\mathbb{Z}, +)$ não admite série de composição. Suponha, por contradição, que $\mathbb{Z}$ admita uma série de composição
+        \[{0} = G_0 \triangleleft G_1 \triangleleft G_2 \triangleleft \cdots \triangleleft G_n = \mathbb{Z}.\]
+        Sabemos que para toda série de composição, cada fator quociente $G_{i+1}/G_i$ é um grupo simples. Vamos analisar o primeiro subgrupo da série, $G_1$.
+        Qualquer subgrupo não-trivial de $\mathbb{Z}$ é da forma $m\mathbb{Z}$ para algum inteiro $m > 0$. Assim, $G_1 = m\mathbb{Z}$ para algum $m > 0$.
+        Considere agora o quociente $G_1/G_0 = G_1/{0} \cong m\mathbb{Z}$. Este quociente é isomorfo a $\mathbb{Z}$, pois $m\mathbb{Z} \cong \mathbb{Z}$ (pelo isomorfismo $f: \mathbb{Z} \to m\mathbb{Z}$ dado por $f(k) = mk$).
+        Porém, $\mathbb{Z}$ não é um grupo simples, pois contém $2\mathbb{Z}$ como subgrupo normal diferente de ${0}$ e diferente do próprio $\mathbb{Z}$. Por definição, um grupo simples não pode conter subgrupos normais além do trivial e do próprio grupo.
+        Isto contradiz a exigência de que todos os fatores quocientes numa série de composição sejam grupos simples.
+        Portanto, $(\mathbb{Z}, +)$ não admite série de composição.
+            \end{novo}
+\end{proof}
+
+\begin{proposition}
+\label{prop:grupo_finito_admite_serie_decomposicao}
+    \novo{Todo grupo finito $G \not= \{e\}$ admite uma série de composição.}
+\end{proposition}
+\begin{proof}
+    \begin{novo}
+        Demonstraremos por indução sobre a ordem $|G|$ do grupo.
+        \textbf{Base:} Se $|G| = 1$, então $G = \{e\}$, que é o caso trivial excluído pelo enunciado.
+        Se $|G| = p$ é um número primo, então $G$ é um grupo simples (pois qualquer subgrupo tem ordem 1 ou $p$ pelo Teorema de Lagrange). Neste caso, a série
+        $$
+        {e} = G_0 \triangleleft G_1 = G
+        $$
+        é uma série de composição, pois $G_1/G_0 \cong G$ é simples.\\
+        \textbf{Hipótese de indução:} Suponha que todo grupo finito de ordem menor que $|G|$ admite uma série de composição.\\
+        \textbf{Passo indutivo:} Para um grupo $G$ de ordem $|G| > p$, consideramos dois casos:\\
+        \textit{Caso 1:} Se $G$ é simples, então a série ${e} \triangleleft G$ é uma série de composição, pois $G/{e} \cong G$ é simples.\\
+        \textit{Caso 2:} Se $G$ não é simples, então existe um subgrupo normal $N$ de $G$ tal que ${e} \neq N \neq G$. Como $|N| < |G|$, pela hipótese de indução, $N$ admite uma série de composição:\\
+        $$
+        {e} = N_0 \triangleleft N_1 \triangleleft N_2 \triangleleft \cdots \triangleleft N_k = N
+        $$
+        Além disso, o grupo quociente $G/N$ também tem ordem menor que $|G|$, portanto, pela hipótese de indução, $G/N$ admite uma série de composição:
+        $$
+        {N}/N = H_0/N \triangleleft H_1/N \triangleleft H_2/N \triangleleft \cdots \triangleleft H_m/N = G/N
+        $$
+        onde $H_0 = N \triangleleft H_1 \triangleleft H_2 \triangleleft \cdots \triangleleft H_m = G$ é uma sequência de subgrupos de $G$ contendo $N$.
+        Podemos então combinar estas duas séries para formar uma série subnormal para $G$:
+        $$
+        {e} = N_0 \triangleleft N_1 \triangleleft N_2 \triangleleft \cdots \triangleleft N_k = N = H_0 \triangleleft H_1 \triangleleft H_2 \triangleleft \cdots \triangleleft H_m = G
+        $$
+        Esta série é uma série de composição para $G$, pois:
+
+        Os quocientes $N_{i+1}/N_i$ são simples, pois vêm da série de composição de $N$.
+        Os quocientes $H_{j+1}/H_j$ são isomorfos a $(H_{j+1}/N)/(H_j/N)$, que são simples, pois vêm da série de composição de $G/N$.
+
+        Portanto, todo grupo finito admite uma série de composição.
+    \end{novo}
+\end{proof}
+
+\begin{definition}
+\label{def:series_subnormais_equivalentes}
+    \begin{novo}
+        Duas séries subnormais de um grupo $G$
+        $$
+        {e} = G_0 \triangleleft G_1 \triangleleft G_2 \triangleleft \cdots \triangleleft G_n = G
+        $$
+        e
+        $$
+        {e} = H_0 \triangleleft H_1 \triangleleft H_2 \triangleleft \cdots \triangleleft H_m = G
+        $$
+        são ditas \textit{equivalentes} se $n = m$ e existe uma permutação $\pi$ do conjunto ${1, 2, \ldots, n}$ tal que $G_i/G_{i-1} \cong H_{\pi(i)}/H_{\pi(i)-1}$ para $i = 1, 2, \ldots, n$. Em outras palavras, duas séries subnormais são equivalentes se elas possuem o mesmo número de fatores quocientes e estes fatores são isomorfos entre si, possivelmente em ordem diferente.
+    \end{novo}
+\end{definition}
+    
 \bibliographystyle{plain}
 \bibliography{main}
 
