@@ -1970,14 +1970,6 @@ A_n = \left\langle\,\{ (a\,b\,l) \mid l\in\{1,2,\dots,n\},\,l\neq a,b \}\,\right
     Por fim, se $H$ não possui 3-ciclos, então deve possuir alguma dupla transposição, digamos $(12)(34)$. Assim, $H$ contêm também $(234)(12)(34)(234)^{-1} = (13)(24)$ e $(12)(34)(13)(24) = (14)(23)$. Assim, $H = K$, mostrando a unicidade dos três subgrupos.
 \end{proof}
 
-\begin{novo}
-\begin{proposition}
-\label{prop:S_n_subgrupos_normais}
-    \begin{enumerate}[label=\alph*)]
-        \item Seja $n = 3$ ou $n \geq 5$. Então os únicos subgrupos normais de $S_n$ são $\{id\}$, $A_n$ e $S_n$.
-        \item Seja $n = 4$. Então os únicos subgrupos normais de $S_4$ são $\{id\}$, $A_4$, o grupo de Klein $K$ e $S_4$.
-    \end{enumerate}
-\end{proposition}
 \begin{proposition}
 \label{prop:S_n_subgrupos_normais}
     \begin{enumerate}[label=\alph*)]
@@ -2004,7 +1996,6 @@ A_n = \left\langle\,\{ (a\,b\,l) \mid l\in\{1,2,\dots,n\},\,l\neq a,b \}\,\right
         \item Para $n = 4$, sabemos que $A_4$ possui exatamente três subgrupos normais: $\{id\}$, $A_4$, e o grupo de Klein $K$, conforme demonstrado no teorema \ref{klein_subgrupos}. Como $A_4 \triangleleft S_4$ e $(S_4:A_4) = 2$, pelo \hyperref[theo:teorema_da_correspondencia]{Teorema da Correspondência}, tem-se uma bijeção entre o conjunto dos subgrupos de $S_4$ que contêm $A_4$ e o conjunto dos subgrupos de $S_4/A_4$, logo, qualquer subgrupo normal de $S_4$ que não esteja contido em $A_4$ deve ser igual a $S_4$. Além disso, qualquer subgrupo normal de $S_4$ que esteja contido em $A_4$ deve ser um dos subgrupos normais de $A_4$, ou seja, $\{id\}$, $A_4$, ou $K$. Portanto, os únicos subgrupos normais de $S_4$ são $\{id\}$, $A_4$, $K$, e $S_4$.
     \end{enumerate}
 \end{proof}
-\end{novo}
 
 \chapter{Grupos Solúveis}
 
@@ -2021,33 +2012,26 @@ Observa-se que os \textit{grupos quocientes} da série $(*)$ são os grupos $G_{
 
 \begin{definition}
 \label{def:comprimento_serie}
-    \begin{novo}
         O \textit{comprimento} de uma série subnormal $(*)$ é o número de fatores quocientes $G_{i+1}/G_i$ que não são triviais.
-    \end{novo}
 \end{definition}
 
 \begin{definition}
 \label{def:refinamento_serie}
-    \begin{novo}
         Uma série subnormal $(*)$ é um \textit{refinamento} de outra série subnormal $(*)$ se pode ser obtida de $(*)$ pela inserção de subgrupos normais intermediários. O refinamento é dito próprio se insere ao menos um novo subgrupo normal não presente originalmente em $(*)$.
-    \end{novo}
 \end{definition}
 
 \begin{definition}
 \label{def:serie_decomposicao}
-    \begin{novo}
         Uma série subnormal é chamada de \textit{série de composição} de $G$ se não admite refinamento próprio.
         
         Em particular, em uma série de decomposição, cada quociente é um grupo simples, pois caso contrário haveria como inserir um subgrupo normal próprio em $G_{i+1}/G_i$, refinando a série.
-    \end{novo}
 \end{definition}
 
 \begin{proposition}
 \label{prop:nem_todo_grupo_admite_serie_decomposicao}
-    \novo{Existem grupos que não admitem série de composição.}
+    Existem grupos que não admitem série de composição.
 \end{proposition}
 \begin{proof}
-    \begin{novo}
         Por exemplo, o grupo aditivo $(\mathbb{Z}, +)$ não admite série de composição. Suponha, por contradição, que $\mathbb{Z}$ admita uma série de composição
         \[{0} = G_0 \triangleleft G_1 \triangleleft G_2 \triangleleft \cdots \triangleleft G_n = \mathbb{Z}.\]
         Sabemos que para toda série de composição, cada fator quociente $G_{i+1}/G_i$ é um grupo simples. Vamos analisar o primeiro subgrupo da série, $G_1$.
@@ -2056,15 +2040,13 @@ Observa-se que os \textit{grupos quocientes} da série $(*)$ são os grupos $G_{
         Porém, $\mathbb{Z}$ não é um grupo simples, pois contém $2\mathbb{Z}$ como subgrupo normal diferente de ${0}$ e diferente do próprio $\mathbb{Z}$. Por definição, um grupo simples não pode conter subgrupos normais além do trivial e do próprio grupo.
         Isto contradiz a exigência de que todos os fatores quocientes numa série de composição sejam grupos simples.
         Portanto, $(\mathbb{Z}, +)$ não admite série de composição.
-            \end{novo}
 \end{proof}
 
 \begin{proposition}
 \label{prop:grupo_finito_admite_serie_decomposicao}
-    \novo{Todo grupo finito $G \not= \{e\}$ admite uma série de composição.}
+    Todo grupo finito $G \not= \{e\}$ admite uma série de composição.
 \end{proposition}
 \begin{proof}
-    \begin{novo}
         Demonstraremos por indução sobre a ordem $|G|$ do grupo.
         \textbf{Base:} Se $|G| = 1$, então $G = \{e\}$, que é o caso trivial excluído pelo enunciado.
         Se $|G| = p$ é um número primo, então $G$ é um grupo simples (pois qualquer subgrupo tem ordem 1 ou $p$ pelo Teorema de Lagrange). Neste caso, a série
@@ -2094,12 +2076,10 @@ Observa-se que os \textit{grupos quocientes} da série $(*)$ são os grupos $G_{
         Os quocientes $H_{j+1}/H_j$ são isomorfos a $(H_{j+1}/N)/(H_j/N)$, que são simples, pois vêm da série de composição de $G/N$.
 
         Portanto, todo grupo finito admite uma série de composição.
-    \end{novo}
 \end{proof}
 
 \begin{definition}
 \label{def:series_subnormais_equivalentes}
-    \begin{novo}
         Duas séries subnormais de um grupo $G$
         $$
         {e} = G_0 \triangleleft G_1 \triangleleft G_2 \triangleleft \cdots \triangleleft G_n = G
@@ -2109,7 +2089,6 @@ Observa-se que os \textit{grupos quocientes} da série $(*)$ são os grupos $G_{
         {e} = H_0 \triangleleft H_1 \triangleleft H_2 \triangleleft \cdots \triangleleft H_m = G
         $$
         são ditas \textit{equivalentes} se $n = m$ e existe uma permutação $\pi$ do conjunto ${1, 2, \ldots, n}$ tal que $G_i/G_{i-1} \cong H_{\pi(i)}/H_{\pi(i)-1}$ para $i = 1, 2, \ldots, n$. Em outras palavras, duas séries subnormais são equivalentes se elas possuem o mesmo número de fatores quocientes e estes fatores são isomorfos entre si, possivelmente em ordem diferente.
-    \end{novo}
 \end{definition}
     
 \bibliographystyle{plain}
