@@ -2088,8 +2088,66 @@ Observa-se que os \textit{grupos quocientes} da série $(*)$ são os grupos $G_{
         $$
         {e} = H_0 \triangleleft H_1 \triangleleft H_2 \triangleleft \cdots \triangleleft H_m = G
         $$
-        são ditas \textit{equivalentes} se $n = m$ e existe uma permutação $\pi$ do conjunto ${1, 2, \ldots, n}$ tal que $G_i/G_{i-1} \cong H_{\pi(i)}/H_{\pi(i)-1}$ para $i = 1, 2, \ldots, n$. Em outras palavras, duas séries subnormais são equivalentes se elas possuem o mesmo número de fatores quocientes e estes fatores são isomorfos entre si, possivelmente em ordem diferente.
+        são ditas \textit{equivalentes} se $n = m$ e existe uma permutação $\pi$ do conjunto ${1, 2, \ldots, n}$ tal que $G_i/G_{i-1} \simeq H_{\pi(i)}/H_{\pi(i)-1}$ para $i = 1, 2, \ldots, n$. Em outras palavras, duas séries subnormais são equivalentes se elas possuem o mesmo número de fatores quocientes e estes fatores são isomorfos entre si, possivelmente em ordem diferente.
 \end{definition}
+
+\begin{novo}
+Considere o seguinte exemplo:
+$$\mathbb{Z}/30\mathbb{Z} = \gen{\overline{1}}.$$
+
+Note que
+\begin{equation*}
+    \gen{\overline{0}} \triangleleft \gen{\overline{10}} \triangleleft \gen{\overline{5}} \triangleleft \gen{\overline{1}}
+\end{equation*}
+
+e ainda que
+\begin{equation*}
+    \frac{\gen{\overline{1}}}{\gen{\overline{5}}} \simeq \frac{\mathbb{Z}}{5\mathbb{Z}}, \, \frac{\gen{\overline{5}}}{\gen{\overline{10}}} \simeq \frac{\mathbb{Z}}{2\mathbb{Z}} \text{ e } \frac{\gen{\overline{10}}}{\gen{\overline{0}}} \simeq \frac{\mathbb{Z}}{3\mathbb{Z}}.
+\end{equation*}
+
+Assim, temos uma série de composição, pela primalidade dos fatores quocientes.
+
+Ademais, as seguintes séries subnormais são equivalentes:
+\begin{align*}
+     &\gen{\overline{0}} \triangleleft \gen{\overline{10}} \triangleleft \gen{\overline{5}} \triangleleft \gen{\overline{1}}\\
+     &\gen{\overline{0}} \triangleleft \gen{\overline{6}} \triangleleft \gen{\overline{2}} \triangleleft \gen{\overline{1}}\\
+     &\gen{\overline{0}} \triangleleft \gen{\overline{6}} \triangleleft \gen{\overline{3}} \triangleleft \gen{\overline{1}},
+\end{align*}
+pois note que 
+\begin{align*}
+    \frac{\gen{\overline{1}}}{\gen{\overline{5}}} &\simeq \frac{\mathbb{Z}}{5\mathbb{Z}},&\qquad
+    \frac{\gen{\overline{5}}}{\gen{\overline{10}}} &\simeq \frac{\mathbb{Z}}{2\mathbb{Z}},&\qquad
+    \frac{\gen{\overline{10}}}{\gen{\overline{0}}} &\simeq \frac{\mathbb{Z}}{3\mathbb{Z}}, &\\
+    \frac{\gen{\overline{1}}}{\gen{\overline{2}}} &\simeq \frac{\mathbb{Z}}{2\mathbb{Z}},&\qquad
+    \frac{\gen{\overline{2}}}{\gen{\overline{6}}} &\simeq \frac{\mathbb{Z}}{3\mathbb{Z}},&\qquad
+    \frac{\gen{\overline{6}}}{\gen{\overline{0}}} &\simeq \frac{\mathbb{Z}}{5\mathbb{Z}}, &\\
+    \frac{\gen{\overline{1}}}{\gen{\overline{3}}} &\simeq \frac{\mathbb{Z}}{3\mathbb{Z}},&\qquad
+    \frac{\gen{\overline{3}}}{\gen{\overline{6}}} &\simeq \frac{\mathbb{Z}}{2\mathbb{Z}},&\qquad
+    \frac{\gen{\overline{6}}}{\gen{\overline{0}}} &\simeq \frac{\mathbb{Z}}{5\mathbb{Z}} .&
+\end{align*}
+\end{novo}
+
+\begin{lemma}
+\label{lemma:zassenhaus}
+    \begin{novo}
+        Sejam $G$ um grupo e $H, H_1, K, K_1 \leq G$, tais que $H_1 \triangleleft H$ e $K_1 \triangleleft K$. Então,
+        \begin{enumerate}
+            \item \begin{align*}
+                H_1(H \cap K_1) &\triangleleft H_1(H \cap K),\\
+                K_1(H_1 \cap K) &\triangleleft K_1(H \cap K).
+            \end{align*}
+            \item \begin{equation*}
+                \frac{H_1(H \cap K)}{H_1(H \cap K_1)} \simeq \frac{K_1(H \cap K)}{K_1(H_1 \cap K)}.
+            \end{equation*}
+        \end{enumerate}
+    \end{novo}
+\end{lemma}
+
+\begin{novo}
+\begin{proof}
+    
+\end{proof}
+\end{novo}
     
 \bibliographystyle{plain}
 \bibliography{main}
